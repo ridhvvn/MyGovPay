@@ -18,6 +18,37 @@
             data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 75, 90]
         },]
     };
+
+    var barChartData1 = {
+        labels : ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"],
+        dataUnit : 'People',
+        datasets : [{
+            label : "join",
+            color : "#b695ff",
+            data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 75, 90]
+        },]
+    };
+
+    var data1 = {
+        labels: ['January', 'February', 'March', 'April', 'May'],
+        datasets: [{
+            label: 'Chart 1 Data',
+            data: [10, 20, 15, 25, 30], // Example data values
+            backgroundColor: 'rgba(255, 99, 132, 0.2)', // Bar color
+            borderColor: 'rgba(255, 99, 132, 1)', // Border color
+            borderWidth: 1
+        }]
+    };
+    var data2 = {
+        labels: ['December', 'May', 'March', 'April', 'May'],
+        datasets: [{
+            label: 'Chart 1 Data',
+            data: [10, 20, 15, 25, 30], // Example data values
+            backgroundColor: 'rgba(255, 99, 132, 0.2)', // Bar color
+            borderColor: 'rgba(255, 99, 132, 1)', // Border color
+            borderWidth: 1
+        }]
+    };
     var barChartMultiple = {
         labels : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         dataUnit : 'USD',
@@ -46,12 +77,16 @@
         }]
     };
 
-    function barChart(selector, set_data){
+    function barChart(selector, set_data) {
+        // Selector argument allows targeting specific canvas elements, set_data allows passing custom data
         var $selector = (selector) ? $(selector) : $('.bar-chart');
-        $selector.each(function(){
-            var $self = $(this), _self_id = $self.attr('id'), _get_data = (typeof set_data === 'undefined') ? eval(_self_id) : set_data,
-            _d_legend = (typeof _get_data.legend === 'undefined') ? false : _get_data.legend;
-
+        $selector.each(function() {
+            var $self = $(this),
+                _self_id = $self.attr('id'),
+                // If set_data is undefined, use the data object associated with the canvas ID
+                _get_data = (typeof set_data === 'undefined') ? eval(_self_id) : set_data,
+                _d_legend = (typeof _get_data.legend === 'undefined') ? false : _get_data.legend;
+    
             var selectCanvas = document.getElementById(_self_id).getContext("2d");
             var chart_data = [];
             for (var i = 0; i < _get_data.datasets.length; i++) {
@@ -60,14 +95,14 @@
                     data: _get_data.datasets[i].data,
                     // Styles
                     backgroundColor: _get_data.datasets[i].color,
-                    borderWidth:2,
+                    borderWidth: 2,
                     borderColor: 'transparent',
-                    hoverBorderColor : 'transparent',
-                    borderSkipped : 'bottom',
-                    barPercentage : NioApp.State.asMobile ? .95 : .75,
-                    categoryPercentage : NioApp.State.asMobile ? .95 : .75,
+                    hoverBorderColor: 'transparent',
+                    borderSkipped: 'bottom',
+                    barPercentage: NioApp.State.asMobile ? .95 : .75,
+                    categoryPercentage: NioApp.State.asMobile ? .95 : .75,
                 });
-            } 
+            }
             var chart = new Chart(selectCanvas, {
                 type: 'bar',
                 data: {
@@ -80,8 +115,8 @@
                             display: (_get_data.legend) ? _get_data.legend : false,
                             rtl: NioApp.State.isRTL,
                             labels: {
-                                boxWidth:30,
-                                padding:20,
+                                boxWidth: 30,
+                                padding: 20,
                                 color: '#6783b8',
                             }
                         },
@@ -89,21 +124,21 @@
                             enabled: true,
                             rtl: NioApp.State.isRTL,
                             callbacks: {
-                                label: function (context) {
+                                label: function(context) {
                                     return `${context.parsed.y} ${_get_data.dataUnit}`;
                                 },
                             },
                             backgroundColor: '#eff6ff',
-                            titleFont:{
+                            titleFont: {
                                 size: 13,
                             },
                             titleColor: '#6783b8',
                             titleMarginBottom: 6,
                             bodyColor: '#9eaecf',
-                            bodyFont:{
+                            bodyFont: {
                                 size: 12
                             },
-                            bodySpacing:4,
+                            bodySpacing: 4,
                             padding: 10,
                             footerMarginTop: 0,
                             displayColors: false
@@ -114,21 +149,21 @@
                         y: {
                             display: true,
                             stacked: (_get_data.stacked) ? _get_data.stacked : false,
-                            position : NioApp.State.isRTL ? "right" : "left",
+                            position: NioApp.State.isRTL ? "right" : "left",
                             ticks: {
-                                beginAtZero:true,
+                                beginAtZero: true,
                                 font: {
                                     size: 12,
                                 },
-                                color:'#9eaecf',
+                                color: '#9eaecf',
                             },
-                            grid: { 
-                                color: NioApp.hexRGB("#526484",.2),
-                                tickLength:0,
-                                zeroLineColor: NioApp.hexRGB("#526484",.2),
-                                drawTicks:false,
+                            grid: {
+                                color: NioApp.hexRGB("#526484", .2),
+                                tickLength: 0,
+                                zeroLineColor: NioApp.hexRGB("#526484", .2),
+                                drawTicks: false,
                             },
-                            
+    
                         },
                         x: {
                             display: true,
@@ -137,7 +172,7 @@
                                 font: {
                                     size: 12,
                                 },
-                                color:'#9eaecf',
+                                color: '#9eaecf',
                                 source: 'auto',
                                 reverse: NioApp.State.isRTL
                             },
@@ -145,7 +180,7 @@
                                 color: "transparent",
                                 tickLength: 10,
                                 zeroLineColor: 'transparent',
-                                drawTicks:false,
+                                drawTicks: false,
                             },
                         }
                     }
@@ -153,7 +188,7 @@
             });
         })
     }
-    // init bar chart
+    
     barChart();
 
 

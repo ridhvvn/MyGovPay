@@ -1,3 +1,5 @@
+
+
 <!-- wrap @s -->
 <div class="nk-wrap ">
                 <!-- main header @s -->
@@ -305,3 +307,7 @@
                     </div><!-- .container-fliud -->
                 </div>
                 <!-- main header @e -->
+                <div class="nk-content ">
+<div class="container-fluid">
+<div class="nk-content-inner">
+<div class="nk-content-body">

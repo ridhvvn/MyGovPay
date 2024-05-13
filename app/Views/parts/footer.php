@@ -1,3 +1,12 @@
+                    </div>
+					<!-- .row -->
+				</div>
+				<!-- .nk-block -->
+			</div>
+		</div>
+	</div>
+</div> 
+
 <!-- footer @s -->
 <div class="nk-footer">
                     <div class="container-fluid">
@@ -174,10 +183,9 @@
     <!-- JavaScript -->
     <script src="./assets/js/bundle.js?ver=3.2.3"></script>
     <script src="./assets/js/scripts.js?ver=3.2.3"></script>
-    <script src="./assets/js/charts/chart-ecommerce.js?ver=3.2.3"></script>
-    <script src="./assets/js/charts/chart-sales.js?ver=3.2.3"></script>
-    <script src="./assets/js/charts/chart-analytics.js?ver=3.2.3"></script>
-    <script src="./assets/js/libs/jqvmap.js?ver=3.2.3"></script>
+    <script src="./js/charts/chart-pbtpay.js?ver=3.2.3"></script>
+    <script src="./js/libs/jqvmapmy.js?ver=3.2.3"></script>
+    
 </body>
 
 </html>

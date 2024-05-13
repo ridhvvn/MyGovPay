@@ -37155,7 +37155,7 @@ button.close {
   flex-grow: 1;
 }
 .nk-sales-ck.large {
-  height: 200px;
+  height: 500px;
 }
 
 @media (min-width: 992px) and (max-width: 1539.98px) {
@@ -37439,7 +37439,7 @@ button.close {
 }
 
 .analytics-map .vector-map {
-  height: 160px;
+  height: 560px;
   margin: 1rem 0;
 }
 .analytics-map-data {
