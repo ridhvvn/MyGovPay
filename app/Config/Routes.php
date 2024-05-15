@@ -9,6 +9,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/bulanan', 'Home::bulanan');
 $routes->get('/tahunan', 'Home::tahunan');
 $routes->get('/kutipan', 'Home::kutipan');
+$routes->get('/kutipan2', 'Home::kutipan2');
 
 
 $routes->get('/register', 'Home::register');

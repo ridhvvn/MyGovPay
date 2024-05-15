@@ -77,7 +77,7 @@
                                             <a href="#" class="nk-menu-link"><span class="nk-menu-text">Kutipan Semalam</span></a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="#" class="nk-menu-link"><span class="nk-menu-text">Semua Kutipan</span></a>
+                                            <a href="/kutipan2" class="nk-menu-link"><span class="nk-menu-text">Semua Kutipan</span></a>
                                         </li>
                                         <li class="nk-menu-item">
                                             <a href="#" class="nk-menu-link"><span class="nk-menu-text">Laporan Harian</span></a>

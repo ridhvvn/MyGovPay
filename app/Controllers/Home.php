@@ -60,10 +60,15 @@ class Home extends BaseController
     {
         return view('components/sidebar')
                 .view('parts/header')
-                .view('tahunan')
-				.view('components/hari/kutipharini')
-				
-				.view('components//tahun/graftahunan01')
+				.view('components/hari/listkutipharini')				
+                .view('parts/footer');
+    }
+	
+	public function kutipan2(): string
+    {
+        return view('components/sidebar')
+                .view('parts/header')
+				.view('components/listkutipsemua')				
                 .view('parts/footer');
     }
 	
